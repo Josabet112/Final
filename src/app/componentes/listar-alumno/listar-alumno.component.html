@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+        Lista Alumno  <a class="btn btn-succes" routerlink="/agregar-alumno/"> Agregar nuevo alumno </a> 
+    </div>
+    <div class="card-body">
+        <h1> Lista Alumno </h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let alumno of Alumno; let iControl=index">
+                    <td > {{alumno.id}} </td>
+                    <td> {{alumno.nombre}}</td>
+                    <td>{{alumno.Correo}} </td>
+                    <td>
+                        <a class="btn btn-info" routerlink="/editar-alumno/{{alumno.id}}"> Editar </a> 
+                        <a  class="btn btn-danger" (click)="borrarRegistro(alumno.id, iControl)" role="button">Button</a> Borrar  </td>
+                </tr>
+               
+            </tbody>
+        </table>
+        
+    </div>
+    
+</div>
